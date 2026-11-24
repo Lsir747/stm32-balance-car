@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include "stm32f10x.h"                  // Device header
-#include "Delay.h"
-#include "OLED.h"
 #include "MY_MPU6050.h"
 #include "MPU6050_Reg.h"
 #include  "MyUsart.h"
@@ -20,9 +18,9 @@ int main(void)
 	
 	while(1)
 	{
-		OLED_ShowString(1,1,"ID:");
+
 		MPU6050_ReadData(I2C2,MPU6050_WHO_AM_I,1);
-		OLED_ShowHexNum(1,4,MPU6050_ID,3);
+
 		
 		MPU6050_ReadData(I2C2,MPU6050_ACCEL_XOUT_H,14);
 		Merge();
