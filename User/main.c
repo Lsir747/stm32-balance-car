@@ -12,7 +12,7 @@ extern uint8_t MPU6050_ID;
 int main(void)
 {
 	Recover();
-	OLED_Init();
+
 	MY_MPU6050_Init();
 	MyUsart_Init();
 	
@@ -26,7 +26,7 @@ int main(void)
 		Merge();
 
 		
-		printf("Ax=%.2f    Ay=%.2f    Az=%.2f    Gx=%.2f    Gy=%.2f    Gz=%.2f\r\n",
-			AG_AllData[0] ,AG_AllData[1] ,AG_AllData[2], AG_AllData[3],AG_AllData[4],AG_AllData[5]);
+		printf("ID:%X    Ax=%.2f    Ay=%.2f    Az=%.2f    Gx=%.2f    Gy=%.2f    Gz=%.2f\r\n",
+			MPU6050_ID,AG_AllData[0] ,AG_AllData[1] ,AG_AllData[2], AG_AllData[3],AG_AllData[4],AG_AllData[5]);
 	}
 }
